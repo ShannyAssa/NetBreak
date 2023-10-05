@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>NetBreak help</title>
+	<link rel="stylesheet" href="help.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<link rel="icon" href="/src/ui/resources/icon_128.png">
+</head>
+
+<body>
+	<div>
+		<div id="titleBorder">
+			<h2>NetBreak</h2>
+			<h4>Offline web browsing: Access web pages and content that you have not previously visited or downloaded.</h4>
+		</div> <span id="index"> <a href="#getting-started">Getting started</a> - <a href="#options">Options description</a>
+			- <a href="#known-issues">Known issues</a> </span>
+		<hr>
+		<ol>
+			<li><a id="getting-started">Getting started</a>
+				<ul>
+					<li>Wait until the page is fully loaded.</li>
+					<li>
+						When right-clicking the NetBreak button <img src="../resources/icon_16.png" class="icon"> in the
+						extension toolbar it allows you to:
+						<ul>
+							<li>Save the current tab when clicking "Save current page with NetBreak" button.</li>
+							<li>
+								Activate the auto-save of the multi-level web pages saving for:
+								<ul>
+									<li>the current tab.</li>
+									<li>the unpinned tabs.</li>
+									<li>all the tabs.</li>
+								</ul>
+							</li>
+							<li>Watch the pending saves clicking the "View pending saves" button.</li>
+
+						</ul>
+
+					</li>
+				</ul>
+			</li>
+			<li><a id="options">Options description</a>
+				<p>You can customize NetBreak through the options page. Right-click on NetBreak button <img
+						src="../resources/icon_16.png" class="icon"> in the browser toolbar and select "Options"/"Manage
+					extension" in the context menu to open the options page.</p>
+				<p>User interface</p>
+				<ul>
+					<li data-options-label="addMenuEntryLabel"> <span class="option">Option: add entry in the context
+							menu of the webpage</span>
+						<p>Check this option to display an entry for NetBreak in the context menu of the webpage. The
+							context menu of the NetBreak button <img src="../resources/icon_16.png" class="icon"> in
+							the extension toolbar is displayed whether this option is checked or not. </p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="shadowEnabledLabel"> <span class="option">Option: overlay a shadow on the
+							page during processing</span>
+						<p>Check this option to overlay a shadow on the page when NetBreak is retrieving page
+							resources. This reminds you that you should not close the tab. </p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="openSavedPageLabel" id="openSavedPageOption"> <span class="option">Option:
+							open saved pages in a new
+							tab</span>
+						<p>Check this option to display the saved page in a new tab. This option can be useful, for
+							example, in order to check the page is properly saved.</p>
+					</li>
+					<li data-options-label="autoCloseLabel"> <span class="option">Option: auto-close the tab after the
+							page is saved</span>
+						<p>Check this option to automatically close the tab after saving the page displayed inside. </p>
+					</li>
+				</ul>
+				<p>HTML content</p>
+				<ul>
+					<li data-options-label="compressHTMLLabel"> <span class="option">Option: compress HTML
+							content</span>
+						<p>Check this option to remove all HTML comments and unneeded tags, spaces, quotes and
+							whitespace characters. Checking this option helps to reduce the size of the file without
+							altering the document.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="removeHiddenElementsLabel"> <span class="option">Option: remove hidden
+							elements</span>
+						<p>Check this option to remove all hidden elements. Checking this option can help to reduce the
+							size of the file without altering the document. It may also increase the CPU consumption and
+							the time needed to save a page.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="insertMetaCSPLabel"> <span class="option">Option: set content security
+							policy</span>
+						<p>Check this option to add a meta tag with a policy to block any external resources from being
+							loaded.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="removeFramesLabel"> <span class="option">Option: remove frames</span>
+						<p>Check this option to remove all frame and iframe elements. Checking this option can
+							considerably reduce the size of the file without altering the document most of the time. It
+							may also decrease the time needed to save a page.</p>
+					</li>
+					<li data-options-label="saveOriginalURLsLabel"> <span class="option"></span>: save original
+						URLs of embedded resources</span>
+						<p>Check this option to save the URLs of the resources embedded into the saved page. URLs
+							are stored in attributes with a name prefixed with "data-sf-original-" and suffixed with the
+							original attribute name (e.g. "data-sf-original-src", "data-sf-original-href") for HTML
+							contents. For CSS contents, URLs are stored as comments beginning with "original URL:".
+					</li>
+					<li data-options-label="removeInfobarSavedDateLabel">
+						<span class="option">Option: do not include the saved date</span>
+						<p>Check this option to remove the saved date included in the saved page and displayed in the
+							infobar.</p>
+					</li>
+					<li data-options-label="saveRawPageLabel"> <span class="option">Option: save raw page</span>
+						<p>Check this option to save the raw HTML file that the browser received. When this option is
+							checked, the page will be saved as if JavaScript was disabled. Checking this option may
+							alter the document.</p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+				</ul>
+				<p>Infobar</p>
+				<ul>
+					<li data-options-label="displayInfobarLabel" id="displayInfobarOption"> <span class="option">Option:
+							display an infobar when
+							viewing a saved page</span>
+						<p>Check this option to display the ℹ button at the top right of the page when viewing a saved
+							page. By clicking this button, you can get more information about the saved date and open
+							the original URL.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="infobarTemplateLabel"> <span class="option">Option: template of the infobar
+							content</span>
+						<p>The template allows you to customize the content displayed in the infobar. You can use any
+							valid character, <code>\n</code> for new lines or <code>\t</code> for tabs. You can also use
+							any variables from <a href="#template-variables">this list</a> anywhere in the template. If
+							the template or the resulting content is empty, the infobar will display the saved date by
+							default. </p>
+						<p>Template examples:</p>
+						<ul>
+							<li><code>{url-href} ({date-iso})</code> will produce contents like "https://www.example.com
+								(2018-09-15 11 06 03 PM)".</li>
+							<li><code>Title: {page-title}</code> will produce contents like "Title: Example Domain" for
+								a page having "Example Domain" as title.</li>
+						</ul>
+					</li>
+					<li data-options-label="confirmInfobarLabel"> <span class="option">Option: open a prompt dialog to
+							edit the infobar content</span>
+						<p>Check this option to display a prompt dialog in order to confirm the infobar content before
+							saving the page. </p>
+					</li>
+					<li data-options-label="includeInfobarLabel"> <span class="option"></span>Option: include infobar in
+						the saved page</span>
+						<p>Check this
+							option to display the ℹ button at the top right of the page when viewing a saved page in a
+							browser where NetBreak is not installed.</p>
+					</li>
+				</ul>
+				<p>Stylesheets</p>
+				<ul>
+					<li data-options-label="removeUnusedStylesLabel"> <span class="option">Option: remove unused
+							styles</span>
+						<p>Check this option to remove all the CSS rules and styles that do not match any element in the
+							saved page. Checking this option will not alter the document and can considerably reduce the
+							size of the file. It will also increase the CPU consumption and the time needed to save a
+							page.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="removeAlternativeMediasLabel"> <span class="option">Option: remove
+							stylesheets for alternative devices to screens</span>
+						<p>Check this option to remove stylesheets that are not used for the screen display like
+							stylesheets for print preview and speech synthesizers. Checking this option can help to
+							reduce the size of the file.</p>
+					</li>
+					<li data-options-label="compressCSSLabel"> <span class="option">Option: compress CSS content</span>
+						<p>Check this option to minify CSS stylesheets. Checking this option can reduce size of the file
+							without altering the document. It may also increase the CPU consumption and the time needed
+							to save a page.</p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+					<li data-options-label="moveStylesInHeadLabel"> <span class="option">Option: move in the head
+							element the styles found outside of it</span>
+						<p>
+							Check this option to move all the style elements found outside the head element into the
+							head element. This can be useful to avoid a FOUC ("flash of unstyled content") when
+							displaying a saved page.</p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+				</ul>
+				<p>Images</p>
+				<ul>
+					<li data-options-label="groupDuplicateImagesLabel"> <span class="option">Option: group duplicate
+							images together</span>
+						<p>Check this option to avoid saving multiple times duplicate images. Checking this option
+							should not alter the document in modern browsers and can considerably reduce the size of the
+							file.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="loadDeferredImagesLabel"> <span class="option">Option: save deferred
+							images</span>
+						<p>Check this option to save all the deferred images that are not yet displayed. This may help
+							to save all the images without scrolling the page. This feature does its best effort and is
+							not guaranteed to work on all sites. It will also increase the time needed to save a page.
+						</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="loadDeferredImagesMaxIdleTimeLabel"> <span class="option">Option: maximum
+							idle time (ms)</span>
+						<p>Enter the maximum delay of time to wait for deferred images. You can increase this value if
+							for example the network or system conditions are degraded. You can also decrease this value
+							otherwise.</p>
+					</li>
+					<li data-options-label="loadDeferredImagesDispatchScrollEventLabel"> <span class="option">Option:
+							dispatch "scroll" event</span>
+						<p>Check this option to dispatch the <a
+								href="https://developer.mozilla.org/docs/Web/API/Document/scroll_event"
+								target="_blank">"scroll"
+								event</a> when waiting for deferred images. This can improve the loading of images
+							on some sites but it can also cause unexpected scrolling problems on some other sites.</p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+					<li data-options-label="loadDeferredImagesKeepZoomLevelLabel"> <span class="option">Option: zoom out
+							the page</span>
+						<p>Check this option to save the entire content of a page by zooming out the page. This can help
+							saving pages using infinite virtual lists for example. </p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+					<li data-options-label="removeAlternativeImagesLabel"> <span class="option">Option: remove images
+							for alternative screen resolutions</span>
+						<p>Check this option to remove images that are alternatives in lower and/or higher resolutions
+							to the ones displayed by default. Checking this option can considerably reduce the size of
+							the file.</p>
+					</li>
+				</ul>
+				<p>Fonts</p>
+				<ul>
+					<li data-options-label="removeUnusedFontsLabel"> <span class="option">Option: remove unused
+							fonts</span>
+						<p>Check this option to remove all font CSS rules that do not match any content. Checking this
+							option should not alter the document and can considerably reduce the size of the file.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+					<li data-options-label="removeAlternativeFontsLabel"> <span class="option">Option: remove
+							alternative fonts</span>
+						<p>Check this option to remove fonts that are alternatives to the ones used. Checking this
+							option should not alter the document and can considerably reduce the size of the file.</p>
+						<p class="notice">It is recommended to <u>check</u> this option</p>
+					</li>
+				</ul>
+				<p>Network</p>
+				<ul>
+					<li data-options-label="blockResourcesLabel"> <span class="option">Option: blocked resources</span>
+						<p>
+							Check the options below to block the download of the corresponding resource types.
+						</p>
+					</li>
+					<li data-options-label="blockMixedContentLabel"> <span class="option">Option: block mixed
+							contents</span>
+						<p>Check this option to block active content served from HTTP when viewing a page in HTTPS. You
+							can find more information about mixed content pages <a
+								href="https://developer.mozilla.org/docs/Web/Security/Mixed_content"
+								target="_blank">here</a>.</p>
+					</li>
+					<li data-options-label="acceptHeadersLabel"> <span class="option">Option: "Accept" headers</span>
+						<p>
+							Enter the <a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept"
+								target="_blank">"Accept" HTTP
+								header</a> values below to adjust support for the corresponding resource types.
+						</p>
+						<p class="notice">It is recommended to leave these values <u>as they are</u></p>
+					</li>
+					<li data-options-label="setMaxResourceSizeLabel"> <span class="option">Option: set maximum size
+							(MB)</span>
+						<p>Check this option to remove from the saved page embedded resources (i.e. images, stylesheets,
+							scripts and iframes) that exceeds a given size.</p>
+					</li>
+					<li data-options-label="maxResourceSizeLabel"> <span class="option">Option: maximum size (MB)</span>
+						<p>Enter the maximum size in megabytes.</p>
+					</li>
+					<li data-options-label="setMaxResourceDelayLabel"> <span class="option">Option: set maximum
+							download delay (s)</span>
+						<p>Check this option to remove from the saved page embedded resources (i.e. images, stylesheets,
+							scripts and iframes) that exceeds a given download time.</p>
+					</li>
+					<li data-options-label="maxResourceDelayLabel"> <span class="option">Option: maximum download delay
+							(s)</span>
+						<p>Enter the maximum download delay in seconds.</p>
+					</li>
+					<li data-options-label="passReferrerOnErrorLabel" id="passReferrerOnErrorOption"> <span
+							class="option">Option: pass \"Referer\"
+							header on
+							cross-origin errors</span>
+						<p>Check this option to pass the HTTP header "Referer" with the "origin" policy after an 401,
+							403, or 404 HTTP error when downloading a cross-origin resource. You should enable this
+							option if you cannot download resources blocked by a hotlink protection.</p>
+						<p class="notice">It is recommended to <u>uncheck</u> this option</p>
+					</li>
+				</ul>
+			<li><a id="known-issues">Known issues</a>
+				<ul>
+					<li>Security Issues
+						<ul>
+							<li>For security reasons, you cannot save pages hosted on https://chrome.google.com.
+							When this happens, 🚫 is displayed on top of the NetBreak icon.</li>
+							<li>For security reasons, NetBreak is sometimes unable to save the image representation of
+								canvas and snapshots of video elements.</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<script type="module" src="../bg/ui-help.js"></script>
+</body>
+
+</html>
